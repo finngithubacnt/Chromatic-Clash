@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode; // <<---- IMPORTANT
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : NetworkBehaviour
 {
-    public Animator animator;
     public Camera playerCamera;
     public float walkSpeed = 6f;
     public float runSpeed = 12f;
@@ -34,13 +34,29 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        animator.SetTrigger("Equip");
+
+        // only enable THIS players camera
+        if (IsOwner)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            if (playerCamera != null)
+            {
+                playerCamera.enabled = false;
+                var listener = playerCamera.GetComponent<AudioListener>();
+                if (listener != null) listener.enabled = false;
+            }
+        }
     }
 
     void Update()
     {
+        // Only the local player proceses input
+        if (!IsOwner) return;
+
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 
@@ -49,10 +65,9 @@ public class PlayerMovement : MonoBehaviour
         float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * Input.GetAxis("Horizontal") : 0;
         float movementDirectionY = moveDirection.y;
         moveDirection = (forward * curSpeedX) + (right * curSpeedY);
-        
+
         if (Input.GetButton("Jump") && canMove && characterController.isGrounded && canslide == true)
         {
-
             moveDirection.y = jumpPower;
         }
         else
@@ -84,7 +99,6 @@ public class PlayerMovement : MonoBehaviour
             {
                 canslide = true;
             }
-            
         }
         if (Input.GetKey(KeyCode.C) && !(Input.GetKey(KeyCode.LeftShift)) && canMove && characterController.isGrounded)
         {
@@ -93,12 +107,11 @@ public class PlayerMovement : MonoBehaviour
             walkSpeed = crouchSpeed;
             runSpeed = crouchSpeed;
             crouched = true;
-
         }
         if (Slide_cooldown > 0)
         {
             Slide_cooldown -= Time.deltaTime;
-            if(Slide_cooldown < 1)
+            if (Slide_cooldown < 1)
             {
                 Slide_cooldown = 0;
                 canslide = true;
@@ -110,13 +123,11 @@ public class PlayerMovement : MonoBehaviour
             slide_Time -= Time.deltaTime;
             if (!(Input.GetKey(KeyCode.C)))
             {
-               
                 if (slide_Time <= 1.5f)
                 {
                     Slide_cooldown = 3f;
                 }
                 slide_Time = 0;
-
             }
         }
         else if (!(Input.GetKey(KeyCode.C)))
@@ -154,13 +165,16 @@ public class PlayerMovement : MonoBehaviour
             transform.rotation *= Quaternion.Euler(0, Input.GetAxis("Mouse X") * lookSpeed, 0);
         }
     }
+
     private void LateUpdate()
     {
+        if (!IsOwner) return;
+
         if (Input.GetKey(KeyCode.LeftShift) && Input.GetKey(KeyCode.C) && canMove && canslide == true && characterController.isGrounded && !crouched == true)
         {
             AdjustCollider(crouchHeight);
             characterController.center = new Vector3(0, 0.2f, 0);
-            
+
             IsSlideing = true;
             canslide = false;
             slide_Time = 2f;
@@ -169,8 +183,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void AdjustCollider(float newHeight)
     {
-       
         characterController.height = newHeight;
-        
     }
 }

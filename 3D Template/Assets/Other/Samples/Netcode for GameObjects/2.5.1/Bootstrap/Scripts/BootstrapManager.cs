@@ -51,7 +51,6 @@ namespace Unity.Netcode.Samples
                     }
                 }
             }
-
             GUILayout.EndArea();
         }
     }
