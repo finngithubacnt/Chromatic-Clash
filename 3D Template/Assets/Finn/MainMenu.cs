@@ -6,13 +6,15 @@ public class MainMenu : MonoBehaviour
 {
     public void HostGame()
     {
+        SceneManager.LoadScene("Testing Networking");
         NetworkManager.Singleton.StartHost();
-        SceneManager.LoadScene("Testing_Networking");
+        
     }
 
     public void JoinGame()
     {
+        SceneManager.LoadScene("Testing Networking");
         NetworkManager.Singleton.StartClient();
-        SceneManager.LoadScene("Testing_Networking");
+        
     }
 }
