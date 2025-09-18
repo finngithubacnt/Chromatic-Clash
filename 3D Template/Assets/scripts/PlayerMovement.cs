@@ -4,7 +4,7 @@ using UnityEngine;
 using Unity.Netcode; // <<---- IMPORTANT
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovement : NetworkBehaviour
+public class PlayerMovemnt : NetworkBehaviour
 {
     public Camera playerCamera;
     public float walkSpeed = 6f;
