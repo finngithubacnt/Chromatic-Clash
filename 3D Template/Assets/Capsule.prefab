@@ -16,8 +16,9 @@ GameObject:
   - component: {fileID: 3551330732694684972}
   - component: {fileID: 5886195454538411357}
   - component: {fileID: 3250316167874599295}
-  - component: {fileID: 8197010857202189752}
-  - component: {fileID: 4524789186069489959}
+  - component: {fileID: -6582584359986391187}
+  - component: {fileID: -2538219649021976799}
+  - component: {fileID: -5903081816492092046}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Player
@@ -223,7 +224,7 @@ MonoBehaviour:
   wallCheckDistance: 0.7
   minJumpHeight: 2
   orientation: {fileID: 4192690037016518480}
---- !u!114 &8197010857202189752
+--- !u!114 &-6582584359986391187
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -232,11 +233,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 3441975461139609959}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5abfce83aadd948498d4990c645a017b, type: 3}
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ShowTopMostFoldoutHeaderGroup: 1
-  NetworkTransformExpanded: 1
+  NetworkTransformExpanded: 0
   AutoOwnerAuthorityTickOffset: 1
   PositionInterpolationType: 0
   RotationInterpolationType: 0
@@ -248,7 +249,7 @@ MonoBehaviour:
   ScaleLerpSmoothing: 1
   ScaleMaxInterpolationTime: 0.1
   AuthorityMode: 0
-  TickSyncChildren: 1
+  TickSyncChildren: 0
   UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
@@ -267,10 +268,9 @@ MonoBehaviour:
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
   SwitchTransformSpaceWhenParented: 0
-  Interpolate: 0
+  Interpolate: 1
   SlerpPosition: 0
-  StaleDataHandling: 1
---- !u!114 &4524789186069489959
+--- !u!114 &-2538219649021976799
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -287,6 +287,18 @@ MonoBehaviour:
   UseRigidBodyForMotion: 1
   AutoUpdateKinematicState: 1
   AutoSetKinematicOnDespawn: 1
+--- !u!114 &-5903081816492092046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3441975461139609959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f876722a3deb1464eb292f999b0026a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6909246987353894947
 GameObject:
   m_ObjectHideFlags: 0

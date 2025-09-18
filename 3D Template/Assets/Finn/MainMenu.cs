@@ -4,17 +4,20 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+
+    [SerializeField] private Canvas menuCanvas; 
+
     public void HostGame()
     {
-        SceneManager.LoadScene("Testing Networking");
         NetworkManager.Singleton.StartHost();
-        
+        menuCanvas.enabled = false;
+
+
     }
 
     public void JoinGame()
     {
-        SceneManager.LoadScene("Testing Networking");
         NetworkManager.Singleton.StartClient();
-        
+        menuCanvas.enabled = false; 
     }
 }
