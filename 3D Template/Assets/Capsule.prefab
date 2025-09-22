@@ -199,7 +199,7 @@ MonoBehaviour:
   gravity: 15
   lookSpeed: 4.15
   lookXLimit: 90
-  defaultHeight: 3
+  defaultHeight: 4.13
   crouchHeight: 1.5
   crouchSpeed: 3
   slide_Time: 0
@@ -711,7 +711,7 @@ Transform:
   m_GameObject: {fileID: 6909246987353894947}
   serializedVersion: 2
   m_LocalRotation: {x: 0.0991309, y: 0.12903999, z: -0.0020407941, w: 0.98666996}
-  m_LocalPosition: {x: 0.06099987, y: 0.6860001, z: 0.15799999}
+  m_LocalPosition: {x: -0.789, y: 1.342, z: -3.008}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -728,7 +728,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 1, b: 1, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 1
   m_FOVAxisMode: 0
@@ -766,7 +766,7 @@ Camera:
   m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
 --- !u!81 &4915148812605743565
@@ -939,7 +939,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
