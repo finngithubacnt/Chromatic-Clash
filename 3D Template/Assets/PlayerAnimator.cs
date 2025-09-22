@@ -1,7 +1,6 @@
 using Unity.Netcode;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]// do reaserch , makes no sense why it only works with this
 public class PlayerAnimator : NetworkBehaviour
 {
     private Animator animator;
@@ -13,7 +12,7 @@ public class PlayerAnimator : NetworkBehaviour
 
     void Start()
     {
-        animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
     }
 
