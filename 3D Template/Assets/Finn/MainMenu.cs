@@ -20,4 +20,15 @@ public class MainMenu : MonoBehaviour
         NetworkManager.Singleton.StartClient();
         menuCanvas.enabled = false; 
     }
+    public class SetIP : MonoBehaviour
+    {
+        public string ipAddress = "10.104.138.29"; // replace with host's LAN IP
+
+        void Start()
+        {
+            var transport = NetworkManager.Singleton.GetComponent<Unity.Netcode.Transports.UTP.UnityTransport>();
+            transport.ConnectionData.Address = ipAddress;
+        }
+    }
+
 }
