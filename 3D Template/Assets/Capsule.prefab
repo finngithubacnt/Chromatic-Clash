@@ -222,10 +222,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   whatIsWall:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   wallRunForce: 300
   maxwallRunTime: 1.5
   wallCheckDistance: 0.7
