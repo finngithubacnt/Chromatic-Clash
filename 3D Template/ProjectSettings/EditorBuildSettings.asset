@@ -8,13 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testing Networking.unity
     guid: 521d6e9bdcc93fe4388db5f1704faf02
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing Menu.unity
     guid: 770dfd9e9e31d6a4dbc99ff7a54dd3ae
-  - enabled: 1
+  - enabled: 0
     path: Assets/John/Win Scene.unity
     guid: 7ef4be8732d22594eb682cee694602fa
-  - enabled: 1
+  - enabled: 0
     path: Assets/Dexton/Scene/Muh supa gud sene thats beter then finny boi.unity
     guid: d3527d090c81f304e804efe3b6ef2e40
   - enabled: 0
