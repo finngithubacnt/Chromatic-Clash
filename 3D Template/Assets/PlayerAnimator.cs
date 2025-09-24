@@ -9,9 +9,10 @@ public class PlayerAnimator : NetworkBehaviour
     private int speedHash = Animator.StringToHash("Speed");
     private int jumpHash = Animator.StringToHash("IsJumping");
     private int crouchHash = Animator.StringToHash("IsCrouching");
-
+    [SerializeField] private GroundCheck groundCheck;
     void Start()
     {
+        GroundCheck groundCheck = new GroundCheck();
         animator = GetComponentInChildren<Animator>();
         controller = GetComponent<CharacterController>();
     }
@@ -27,7 +28,7 @@ public class PlayerAnimator : NetworkBehaviour
         // set parameters locally(my player not yours)
         animator.SetFloat(speedHash, speed);
 
-        animator.SetBool(jumpHash, !controller.isGrounded);
+        animator.SetBool(jumpHash, !groundCheck.isGrounded); //groundcheck glitchyness
 
         bool isCrouching = Input.GetKey(KeyCode.C); 
         animator.SetBool(crouchHash, isCrouching);

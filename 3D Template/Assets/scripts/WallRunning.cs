@@ -27,13 +27,13 @@ public class WallRunning : MonoBehaviour
 
     [Header("References")]
     public Transform orientation;
-    private PlayerMovemnt pm;
+    private PlayerMovement pm;
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        pm = GetComponent<PlayerMovemnt>();
+        pm = GetComponent<PlayerMovement>();
     }
 
     private void Update()

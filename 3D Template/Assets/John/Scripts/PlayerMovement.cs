@@ -19,7 +19,9 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
-  
+    internal bool WallRunning;
+    internal bool IsWallRunning;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private  void Start()
