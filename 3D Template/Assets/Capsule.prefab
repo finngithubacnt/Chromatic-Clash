@@ -1,5 +1,67 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &225821096600755614
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 706716826927224909}
+  m_Layer: 0
+  m_Name: FootCheckL'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &706716826927224909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 225821096600755614}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1762595205224716973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &332911356896023384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6598371183983232270}
+  m_Layer: 0
+  m_Name: FootCheckR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6598371183983232270
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332911356896023384}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7602321945951468715}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3441975461139609959
 GameObject:
   m_ObjectHideFlags: 0
@@ -203,10 +265,10 @@ MonoBehaviour:
   lookXLimit: 90
   groundCheckPoint: {fileID: 3777825284112680127}
   boxSize: {x: 0.5, y: 0.1, z: 0.5}
-  castDistance: 0.1
+  castDistance: 0.19
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 9
 --- !u!114 &3250316167874599295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1134,7 +1196,7 @@ Transform:
   m_GameObject: {fileID: 8719526564931072325}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.494, z: 0}
+  m_LocalPosition: {x: 0, y: -1.39, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1153,11 +1215,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundCheckPoint: {fileID: 3777825284112680127}
-  boxSize: {x: 0.5, y: 0.13, z: 0.5}
-  castDistance: 0.09
+  boxSize: {x: 0.77, y: 0.11, z: 0.46}
+  castDistance: 0.16
   groundLayer:
     serializedVersion: 2
-    m_Bits: 8
+    m_Bits: 9
   isGrounded: 0
 --- !u!1001 &4753938876746492419
 PrefabInstance:
@@ -2019,7 +2081,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: -2770666803903516498, guid: 6cad2db63657d8042b3eb48783b548f3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 706716826927224909}
+    - targetCorrespondingSourceObject: {fileID: 2916570863362053800, guid: 6cad2db63657d8042b3eb48783b548f3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6598371183983232270}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6cad2db63657d8042b3eb48783b548f3,
         type: 3}
@@ -2034,6 +2104,12 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 6226389106660354130}
   m_SourcePrefab: {fileID: 100100000, guid: 6cad2db63657d8042b3eb48783b548f3, type: 3}
+--- !u!4 &1762595205224716973 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -2770666803903516498, guid: 6cad2db63657d8042b3eb48783b548f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4753938876746492419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5076642298383142376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6cad2db63657d8042b3eb48783b548f3,
@@ -2121,3 +2197,9 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!4 &7602321945951468715 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2916570863362053800, guid: 6cad2db63657d8042b3eb48783b548f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 4753938876746492419}
+  m_PrefabAsset: {fileID: 0}
